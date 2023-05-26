@@ -1,0 +1,105 @@
+/* start variables */
+:root {
+    --MainColor: #af6fdd;
+    --SecondColor: #1c1938;
+    --TextColor: #9592ad;
+}
+/* end variables */
+/* start global rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 50vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* end global rules */
+/* start box */
+.box {
+    width: 45%;
+    background-color: var(--SecondColor);
+    color: white;
+    padding: 40px;
+}
+.box h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.box h1 span {
+    color: var(--MainColor);
+}
+.box p {
+    font-size: 11px;
+    color: var(--TextColor);
+    margin-bottom: 15px;
+}
+.box ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 15px;
+}
+.box ul li h2 {
+    font-size: 17px;
+}
+.box ul li span {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--TextColor);
+}
+/* end box */
+/* start image */
+.image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    background-image: url(/images/desktop/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #a33aee84;
+    width: 100%;
+}
+/* end image */
+
+@media(max-width:965px) {
+    .container {
+        flex-direction: column-reverse;
+        height: 90%;
+    }
+    .image {
+        background-image: url(/images/mobile/image-header-mobile.jpg);
+        width: 100%;
+        height: 20%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0;
+    }
+    .box {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+    }
+}
